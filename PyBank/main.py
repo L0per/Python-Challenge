@@ -18,11 +18,18 @@ for row in budget_data:
     net_total += int(row[1])
     if int(row[1]) > greatest_increase:
         greatest_increase = int(row[1])
+        greatest_increase_date = row[0]
     if int(row[1]) < greatest_decrease:
         greatest_decrease = int(row[1])
-    
-print(month_count)
-print(net_total)
-print(net_total / month_count) # Print average
-print(greatest_increase)
-print(greatest_decrease)
+        greatest_decrease_date = row[0]
+
+print(f'''
+Financial Analysis
+------------------------------
+Total Months: {month_count}
+Total: ${net_total}
+Average Change: ${round((net_total / month_count), 2)}
+Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})
+Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})
+''')
+
