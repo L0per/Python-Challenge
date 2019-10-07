@@ -50,6 +50,4 @@ with open("budget_data_summary.csv", 'w', newline='') as newfile:
         [f'Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})'],
         [f'Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})']])
 
-    #newfilewriter.writerow(["------------------------------"])
-    #newfilewriter.writerow([f'Average Change: ${average_change}'])
 
