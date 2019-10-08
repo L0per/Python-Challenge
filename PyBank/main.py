@@ -7,7 +7,7 @@ with open("budget_data.csv") as file:
     budget_data_header = budget_data[0] # Headers for data file
     budget_data = budget_data[1:] # Data file list
 
-# Variable creation
+# Casting
 month_count = 0
 net_total = 0
 greatest_increase = 0
