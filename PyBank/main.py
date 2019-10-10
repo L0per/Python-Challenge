@@ -26,7 +26,7 @@ for row in budget_data:
 
 average_change = round((net_total / month_count), 2) # Average change in profits, rounded to 2 decimals
 
-# Printing results to terminal
+# Print results to terminal
 print(f'''
 Financial Analysis
 ------------------------------
@@ -37,8 +37,7 @@ Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})
 Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})
 ''')
 
-# Printing results to CSV
-# Create CSV file
+# Print results to CSV
 with open("budget_data_summary.csv", 'w', newline='') as newfile:
     newfilewriter = csv.writer(newfile)
     newfilewriter.writerows([
