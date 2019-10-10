@@ -12,19 +12,26 @@ month_count = 0
 net_total = 0
 greatest_increase = 0
 greatest_decrease = 0
+previous_row_value = 0
+average_change_list = []
 
 # Calculations
 for row in budget_data:    
     month_count += 1 # Total number of months
     net_total += int(row[1])
-    if int(row[1]) > greatest_increase: # Greatest increase in profits
-        greatest_increase = int(row[1])
+    profit_change = int(row[1])-previous_row_value
+    if profit_change > greatest_increase: # Greatest increase in profits
+        greatest_increase = profit_change
         greatest_increase_date = row[0]
-    if int(row[1]) < greatest_decrease: # Greatest decrease in profits
-        greatest_decrease = int(row[1])
+    if profit_change < greatest_decrease: # Greatest decrease in profits
+        greatest_decrease = profit_change
         greatest_decrease_date = row[0]
+    average_change_list.append(profit_change)
+    previous_row_value = int(row[1])
+print(average_change_list)
 
-average_change = round((net_total / month_count), 2) # Average change in profits, rounded to 2 decimals
+average_change_list.pop(0) # Removing first value since it is not a change
+average_change = round(sum(average_change_list)/len(average_change_list), 2) # Average change in profits, rounded to 2 decimals
 
 # Print results to terminal
 print(f'''
