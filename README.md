@@ -10,8 +10,8 @@
 
 * Taking a file containing months with their corresponding profits/losses, `main.py` summarizes the data. The results are printed to the terminal and a `.csv` file in the same directory as the script:
   * Total months in the dataset
-  * Net total profits/losses
-  * Average profits/losses
+  * Net total profits
+  * Average change in profits
   * Greatest increase in profits
   * Greatest decrease in profits
   
