@@ -28,7 +28,6 @@ for row in budget_data:
         greatest_decrease_date = row[0]
     average_change_list.append(profit_change)
     previous_row_value = int(row[1])
-print(average_change_list)
 
 average_change_list.pop(0) # Removing first value since it is not a change
 average_change = round(sum(average_change_list)/len(average_change_list), 2) # Average change in profits, rounded to 2 decimals
