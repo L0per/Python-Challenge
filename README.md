@@ -29,18 +29,15 @@
   * `election_data.csv` = original data
   * `election_data_summary.csv` = summarized data created from the python script
 
-* Taking a file containing votes for 4 candidates, `main.py` summarizes the data. The results are printed to the terminal and a `.csv` file in the same directory as the script:
+* Taking a file containing votes for candidates, `main.py` summarizes the data. The results are printed to the terminal and a `.csv` file in the same directory as the script:
   * Total number of votes
   * A list of candidates with their corresponding number of votes and % of total votes
   * The winner
   
-* Note that the headers and first two columns are not required, but the candidate's name must be in the third column. There also must be 4 candidates:
+* Note that the headers and first two columns are not required, but the candidate's name must be in the third column:
 
 ![election_data](https://github.com/L0per/Python-Challenge/blob/master/Images/election_data.JPG?raw=true)
 
 * The data is summarized in the terminal and `.csv` file as shown below:
 
 ![election_data_summary](https://github.com/L0per/Python-Challenge/blob/master/Images/election_summary.JPG?raw=true)
-
-### Improvements
-* The election script only works with exactly 4 candidates. While the dictionary loop will work with any number of candidates, the printing to terminal and `.csv` need to be modified with a loop to print the correct # of candidates in the dictionary.
