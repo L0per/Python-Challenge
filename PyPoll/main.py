@@ -27,28 +27,30 @@ print(f'''
 Election Results
 -------------------------
 Total Votes: {total_votes}
--------------------------
-{list(vote_dict.keys())[0]}: {round((vote_dict[list(vote_dict.keys())[0]]/total_votes)*100,2)}% ({vote_dict[list(vote_dict.keys())[0]]})
-{list(vote_dict.keys())[1]}: {round((vote_dict[list(vote_dict.keys())[1]]/total_votes)*100,2)}% ({vote_dict[list(vote_dict.keys())[1]]})
-{list(vote_dict.keys())[2]}: {round((vote_dict[list(vote_dict.keys())[2]]/total_votes)*100,2)}% ({vote_dict[list(vote_dict.keys())[2]]})
-{list(vote_dict.keys())[3]}: {round((vote_dict[list(vote_dict.keys())[3]]/total_votes)*100,2)}% ({vote_dict[list(vote_dict.keys())[3]]})
+-------------------------''')
+for i in range(0,len(vote_dict)):
+    print(f'{list(vote_dict.keys())[i]}: {round((vote_dict[list(vote_dict.keys())[i]]/total_votes)*100,2)}% ({vote_dict[list(vote_dict.keys())[i]]})')
+print(f'''
 -------------------------
 Winner: {winner}
 -------------------------
 ''')
 
-# Print to CSV
+# Print results to CSV
 with open("election_data_summary.csv", 'w', newline='') as newfile:
     newfilewriter = csv.writer(newfile)
     newfilewriter.writerows([
         ["Election Results"],
         ["-------------------------"],
         [f'Total Votes: {total_votes}'],
-        ["-------------------------"],
-        [f'{list(vote_dict.keys())[0]}: {round((vote_dict[list(vote_dict.keys())[0]]/total_votes)*100,2)}% ({vote_dict[list(vote_dict.keys())[0]]})'],
-        [f'{list(vote_dict.keys())[1]}: {round((vote_dict[list(vote_dict.keys())[1]]/total_votes)*100,2)}% ({vote_dict[list(vote_dict.keys())[1]]})'],
-        [f'{list(vote_dict.keys())[2]}: {round((vote_dict[list(vote_dict.keys())[2]]/total_votes)*100,2)}% ({vote_dict[list(vote_dict.keys())[2]]})'],
-        [f'{list(vote_dict.keys())[3]}: {round((vote_dict[list(vote_dict.keys())[3]]/total_votes)*100,2)}% ({vote_dict[list(vote_dict.keys())[3]]})'],
+        ["-------------------------"]
+    ])
+    for i in range(0,len(vote_dict)):
+        newfilewriter.writerows([
+        [f'{list(vote_dict.keys())[i]}: {round((vote_dict[list(vote_dict.keys())[i]]/total_votes)*100,2)}% ({vote_dict[list(vote_dict.keys())[i]]})']
+    ])
+    newfilewriter.writerows([
         ["-------------------------"],
         [f'Winner: {winner}'],
-        ["-------------------------"]])
+        ["-------------------------"]
+    ])
